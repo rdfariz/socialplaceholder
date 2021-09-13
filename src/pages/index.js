@@ -1,4 +1,3 @@
-
 import Home from './Home';
 import Profil from './Profile';
 import PostDetail from './PostDetail';

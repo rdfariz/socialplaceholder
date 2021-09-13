@@ -2,16 +2,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Component from './component';
 import * as actions from './action';
+import { getPosts } from '../Home/action';
 
 function mapStateToProps(state) {
   return {
-    ...state.profilDetail
+    home: { ...state.home },
+    ...state.postDetail
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators({
+      ...actions,
+      getPosts
+    }, dispatch)
   };
 }
 

@@ -4,6 +4,8 @@ const actions = {
 
   // POST
   SET_POST_LIST: 'SET_POST_LIST',
+  SET_POST_DETAIL: 'SET_POST_DETAIL',
+  SET_POST_COMMENTS: 'SET_POST_COMMENTS',
 };
 
 export default actions;

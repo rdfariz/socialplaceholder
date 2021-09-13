@@ -1,7 +1,6 @@
 import { ACTIONS } from '../../constants';
 import { SERVICES } from '../../configs';
 import fetch from '../../utils/fetch';
-// import { history } from '../../store/configureStore';
 
 export function getPosts (params) {
   return (dispatch) => {

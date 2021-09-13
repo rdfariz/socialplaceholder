@@ -7,7 +7,7 @@ function Component ({ children }) {
   return(
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="pt-24 px-2 flex-1 mx-auto lg:max-w-screen-lg container">
+      <main className="pt-28 pb-20 px-2 flex-1 mx-auto lg:max-w-screen-lg container">
         {children}
       </main>
       <Footer/>

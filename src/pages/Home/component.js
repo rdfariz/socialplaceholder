@@ -20,9 +20,11 @@ function Component (props) {
       {isLoading ? (
         <p className="text-center">Loading...</p>
       ) : (
-        posts && posts.map((post) => (
-          <CardPost title={post.title} userId={post.userId} id={post.id} body={post.body} />
-        ))
+        <div className="w-full flex flex-wrap">
+          {posts && posts.map((post) => (
+            <CardPost className="w-full md:w-1/2 p-2" title={post.title} userId={post.userId} id={post.id} body={post.body} />
+          ))}
+        </div>
       )}
     </Layout>
   );

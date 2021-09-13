@@ -3,12 +3,12 @@ import { routerReducer } from 'react-router-redux';
 
 import home from '../pages/Home/reducer';
 import profil from '../pages/Profile/reducer';
-import PostDetail from '../pages/PostDetail/reducer';
+import postDetail from '../pages/PostDetail/reducer';
 
 const rootReducer = combineReducers({
   home,
   profil,
-  PostDetail,
+  postDetail,
   routing: routerReducer
 });
 

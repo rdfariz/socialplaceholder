@@ -22,7 +22,6 @@ function App (props) {
 }
 
 App.propTypes = {
-  history: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
 };
 

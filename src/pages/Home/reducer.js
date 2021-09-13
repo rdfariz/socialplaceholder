@@ -6,7 +6,7 @@ const initialState = {
   isError: false
 };
 
-export default function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action) {
   const { type, data, isLoading } = action;
   const { SET_LOADING, SET_POST_LIST } = ACTIONS;
 
