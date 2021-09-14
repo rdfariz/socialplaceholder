@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Component () {
   return (
     <div className="w-full flex justify-center">

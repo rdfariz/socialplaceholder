@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Component () {
   return (
     <footer className="border w-full z-20 bg-white">
