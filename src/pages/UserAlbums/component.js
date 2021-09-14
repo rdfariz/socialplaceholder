@@ -5,10 +5,11 @@ import Layout from '../../components/layouts';
 import BannerInfo from '../../components/elements/BannerInfo';
 import CardPhoto from '../../components/elements/CardPhoto';
 import Loading from '../../components/elements/Loading';
+import Error from '../Error';
 
 function Component (props) {
   const { match: { params: { id } }, root, albumsInfo, photos, actions } = props;
-  const { isLoading } = root;
+  const { isLoading, isError } = root;
 
   useEffect(() => {
     actions.getAlbumsInfo(id);
@@ -36,6 +37,10 @@ function Component (props) {
     </div>
   );
   
+  if (isError) {
+    return <Error />
+  }
+
   return (
     <Layout>
       <Helmet>

@@ -4,6 +4,7 @@ import Users from './Users';
 import UserDetail from './UserDetail';
 import UserAlbums from './UserAlbums';
 import Albums from './Albums';
+import NotFound from './NotFound';
 
 const pages = {
   Home,
@@ -11,7 +12,8 @@ const pages = {
   Users,
   UserDetail,
   UserAlbums,
-  Albums
+  Albums,
+  NotFound
 };
 
 export default pages;

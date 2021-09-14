@@ -6,10 +6,11 @@ import BannerInfo from '../../components/elements/BannerInfo';
 import CardPost from '../../components/elements/CardPost';
 import CardAlbum from '../../components/elements/CardAlbum';
 import Loading from '../../components/elements/Loading';
+import Error from '../Error';
 
 function Component (props) {
   const { match: { params: { id } }, root, user, userPosts, userAlbums, actions } = props;
-  const { isLoading } = root;
+  const { isLoading, isError } = root;
 
   const [layoutActive, setLayoutActive] = useState(0);
 
@@ -64,6 +65,10 @@ function Component (props) {
       )}
     </div>
   );
+
+  if (isError) {
+    return <Error />
+  }
   
   return (
     <Layout>

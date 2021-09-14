@@ -18,6 +18,7 @@ function App (props) {
           <Route component={pages.UserAlbums} path={ROUTES.USER_ALBUMS(':id')} />
           <Route component={pages.Users} path={ROUTES.USERS()} />
           <Route component={pages.Albums} path={ROUTES.ALBUMS()} />
+          <Route component={pages.NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>
