@@ -25,6 +25,36 @@ export function getPosts (params) {
   };
 }
 
+export function addPost (params) {
+  return (dispatch) => {
+    const options = {
+      method: 'POST',
+      url: SERVICES.GET_POST_LIST,
+      data: { ...params }
+    };
+
+    dispatch(setLoading(true));
+
+    return fetch(options)
+      .then((res) => {
+        dispatch(setError(false));
+        dispatch(insertData(res));
+        dispatch(setLoading(false));
+      })
+      .catch((err) => {
+        dispatch(setError(true));
+        dispatch(setLoading(false));
+      });
+  };
+}
+
+export function insertData (data) {
+  return {
+    type: ACTIONS.INSERT_POST_LIST,
+    data,
+  };
+}
+
 export function setData (data) {
   return {
     type: ACTIONS.SET_POST_LIST,

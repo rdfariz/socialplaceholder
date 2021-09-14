@@ -4,7 +4,7 @@ const services = {
   // Post
   GET_POST_LIST: `${BASE_URL}/posts`,
   GET_POST_DETAIL: (id) => `${BASE_URL}/posts/${id}`,
-  GET_POST_COMMENTS: `${BASE_URL}/comments`,
+  GET_POST_COMMENTS: (id) => `${BASE_URL}/posts/${id}/comments`,
   
   // User
   GET_USER_LIST: `${BASE_URL}/users`,
@@ -16,6 +16,10 @@ const services = {
   GET_ALBUMS_LIST: `${BASE_URL}/albums`,
   GET_ALBUMS_INFO: (id) => `${BASE_URL}/albums/${id}`,
   GET_ALBUMS_PHOTOS: (id) => `${BASE_URL}/albums/${id}/photos`,
+
+  // Comments
+  GET_COMMENT_LIST: `${BASE_URL}/comments`,
+  GET_COMMENT_DETAIL: (id) => `${BASE_URL}/comments/${id}`,
 };
 
 export default services;

@@ -12,10 +12,13 @@ function Component (props) {
   return (
     <div className={`${className} flex`}>
       <div className="w-full p-3 md:p-5 bg-white rounded-lg border cursor-pointer hover:shadow-md" onClick={handleClick}>
+        <div className="text-sm font-medium">
+          <p>Author ID: {userId}</p>
+          <hr className="my-2" />
+        </div>
         <h2 className="text-gray-800 text-lg font-semibold truncate ...">
           {title}
         </h2>
-        <p className="text-sm">by {userId || '-'}</p>
       </div>
     </div>
   )

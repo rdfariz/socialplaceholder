@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 import Layout from '../../components/layouts';
 import CardPost from '../../components/elements/CardPost';
 import Loading from '../../components/elements/Loading';
+import AddCommentForm from '../../components/form/addComment';
+import Comment from '../../components/elements/Comment';
 
 function Component (props) {
   const { match: { params: { id } }, root, home, post, comments, actions } = props;
@@ -38,11 +40,32 @@ function Component (props) {
       }
     }
   };
+  
+  const handleAddComment = async (values) => {
+    const confirmed = window.confirm("Are you sure you want to add this comment?");
+    if (confirmed) {
+      await actions.addPostComment(values, id);
+    }
+  };
+
+  const handleUpdateComment = async (values, commentId) => {
+    const confirmed = window.confirm("Are you sure you want to update this comment?");
+    if (confirmed) {
+      await actions.updatePostComment(values, commentId);
+    }
+  };
+  
+  const handleDeleteComment = async (commentId) => {
+    const confirmed = window.confirm("Are you sure you want to delete this comment?");
+    if (confirmed) {
+      await actions.deletePostComment(commentId);
+    }
+  };
 
   const renderContent = (
     post && (
       <CardPost
-        className="mb-6"
+        className="mb-8"
         title={post.title}
         userId={post.userId}
         id={post.id}
@@ -53,22 +76,32 @@ function Component (props) {
       />
     )
   );
-  
+
   const renderComments = (
     <div className="px-4">
-      <h3 className="text-lg font-medium my-3">Comment</h3>
-      {comments && comments.map((comment) => (
-        <div className="mb-3 pb-4 border-b" key={comment.id}>
-          <h2>by: <span className="font-medium">{comment.name}</span></h2>
-          <p className="mt-1 text-sm">Comment: {comment.body}</p>
-        </div>
+      <h3 className="text-md font-bold mt-4 md:mt-0 mb-2">Comment</h3>
+      {comments && comments.map((comment, index) => (
+        <Comment
+          key={index}
+          id={comment.id}
+          postId={comment.postId}
+          email={comment.email}
+          name={comment.name}
+          body={comment.body}
+          handleUpdateComment={handleUpdateComment}
+          handleDeleteComment={handleDeleteComment}
+        />
       ))}
+      <div className="mt-6">
+        <p className="mb-4 font-medium">Add your comment</p>
+        <AddCommentForm onSubmit={handleAddComment} />
+      </div>
     </div>
   );
 
   const renderSidebar = (
     <div>
-      <h3 className="text-md font-medium mt-4 md:mt-0 mb-2">More Articles</h3>
+      <h3 className="text-md font-bold mt-4 md:mt-0 mb-2">More Articles</h3>
       {posts && posts.map((p, index) => (
         p.id !== post.id && index <= 4 && (
           <CardPost className="py-2" key={p.id} title={p.title} userId={p.userId} id={p.id} body={p.body} />
@@ -81,14 +114,17 @@ function Component (props) {
     <Layout>
       <Helmet>
           <meta charSet="utf-8" />
-          <title>Post {id}</title>
+          <title>{id} - Post</title>
+          <meta name="description" content="Pour out all your complaints - Type your feelings and submit to start" />
       </Helmet>
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-8/12 md:pr-2">
+        <div className="flex flex-wrap p-2">
+          <div className="w-full">
             {renderContent}
+          </div>
+          <div className="w-full lg:w-8/12 md:pr-2">
             {renderComments}
           </div>
           <div className="w-full lg:w-4/12 md:pl-5">

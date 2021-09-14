@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet";
 import Layout from '../../components/layouts';
+import BannerInfo from '../../components/elements/BannerInfo';
 import CardPhoto from '../../components/elements/CardPhoto';
 import Loading from '../../components/elements/Loading';
 
@@ -15,13 +16,8 @@ function Component (props) {
   }, [actions, id]);
 
   const renderHeader = (
-    <div className="w-full p-2 mb-4">
-      <div className="w-full p-5 rounded-lg border bg-gradient-to-r from-pink-500 to-blue-500">
-        <div className="text-white">
-          <p className="text-sm">Album Name:</p>
-          <h2 className="text-lg font-bold">{albumsInfo.title}</h2>
-        </div>
-      </div>
+    <div className='w-full p-2 mb-4'>
+      <BannerInfo className="bg-gradient-to-r from-pink-500 to-blue-500 text-white" label="Album" title={albumsInfo.title} />
     </div>
   );
   
@@ -44,7 +40,8 @@ function Component (props) {
     <Layout>
       <Helmet>
           <meta charSet="utf-8" />
-          <title>{id || ''} - Albums</title>
+          <title>{id} - Albums</title>
+          <meta name="description" content="Pour out all your complaints - Type your feelings and submit to start" />
       </Helmet>
       <div className="w-full flex flex-wrap">
         {renderHeader}

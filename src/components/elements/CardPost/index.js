@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import EditPostForm from '../../form/editPost';
 
 function Component (props) {
-  const { title, id, body, isDetail, className, handleEditPost, handleDeletePost } = props;
+  const { title, id, body, isDetail, className, userId, handleEditPost, handleDeletePost } = props;
   const history = useHistory();
 
   const [isEditLayout, setIsEditLayout] = useState(false);
@@ -20,6 +20,12 @@ function Component (props) {
 
   const renderCardPost = (
     <div>
+      {isDetail && (
+        <div className="text-blue-600 font-medium">
+          <Link to={`/users/${userId}`}>Author ID: {userId}</Link>
+          <hr className="my-3" />
+        </div>
+      )}
       <h2 className={`text-gray-800 text-lg font-semibold ${!isDetail && 'truncate ...'}`}>
         {title}
       </h2>
@@ -57,6 +63,7 @@ Component.defaultProps = {
   title: '',
   id: '',
   body: '',
+  userId: '',
   className: '',
   handleEditPost: () => {},
   handleDeletePost: () => {}
@@ -67,6 +74,7 @@ Component.propTypes = {
   title: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   body: PropTypes.string,
+  userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
   handleEditPost: PropTypes.func,
   handleDeletePost: PropTypes.func

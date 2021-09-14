@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet";
 import Layout from '../../components/layouts';
-import CardUser from '../../components/elements/CardUser';
+import BannerInfo from '../../components/elements/BannerInfo';
 import CardPost from '../../components/elements/CardPost';
 import CardAlbum from '../../components/elements/CardAlbum';
 import Loading from '../../components/elements/Loading';
@@ -33,7 +33,9 @@ function Component (props) {
   const renderHeader = (
     <div className="w-full p-2">
       {user && (
-        <CardUser className="w-full mb-4" title={user.name} id={user.id} body={user.username} isDetail />
+        <div className='w-full mb-4'>
+          <BannerInfo className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-white" subtitle={user.username} title={user.name} />
+        </div>
       )}
       <div className="w-full flex flex-wrap my-2">
         {menus && menus.map((menu, index) => (
@@ -68,6 +70,7 @@ function Component (props) {
       <Helmet>
           <meta charSet="utf-8" />
           <title>{user.name || 'User'} - Profile</title>
+          <meta name="description" content="Pour out all your complaints - Type your feelings and submit to start" />
       </Helmet>
       <div className="w-full flex flex-wrap">
         {renderHeader}

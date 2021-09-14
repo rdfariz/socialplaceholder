@@ -12,7 +12,7 @@ function Component (props) {
       </div>
       <div className="mt-4">
         <button className="bg-green-500 text-white font-bold py-2 px-4 rounded mr-2" type="submit">
-          Save
+          Submit
         </button>
       </div>
     </form>
