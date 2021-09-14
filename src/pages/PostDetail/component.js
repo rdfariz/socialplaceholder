@@ -7,12 +7,11 @@ import CardPost from '../../components/elements/CardPost';
 import Loading from '../../components/elements/Loading';
 import AddCommentForm from '../../components/form/addComment';
 import Comment from '../../components/elements/Comment';
-import Error from '../Error';
 
 function Component (props) {
   const { match: { params: { id } }, root, home, post, comments, actions } = props;
   const { posts } = home;
-  const { isLoading, isError } = root;
+  const { isLoading } = root;
 
   const history = useHistory();
 
@@ -110,10 +109,6 @@ function Component (props) {
       ))}
     </div>
   )
-
-  if (isError) {
-    return <Error />
-  }
 
   return (
     <Layout>

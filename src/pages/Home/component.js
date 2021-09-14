@@ -6,11 +6,10 @@ import BannerInfo from '../../components/elements/BannerInfo';
 import CardPost from '../../components/elements/CardPost';
 import Loading from '../../components/elements/Loading';
 import AddPostForm from '../../components/form/addPost';
-import Error from '../Error';
 
 function Component (props) {
   const { root, posts, actions } = props;
-  const { isLoading, isError } = root;
+  const { isLoading } = root;
   
   useEffect(() => {
     actions.getPosts();
@@ -28,10 +27,6 @@ function Component (props) {
       await actions.addPost(values);
     }
   };
-
-  if (isError) {
-    return <Error />
-  }
 
   return (
     <Layout>

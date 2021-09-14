@@ -6,6 +6,7 @@ const routes = {
   USER_DETAIL: (id) => `/users/${id}`,
   USER_ALBUMS: (id) => `/albums/${id}`,
   ALBUMS: () => `/albums`,
+  ERROR: () => `/error`,
 };
 
 export default routes;

@@ -4,11 +4,10 @@ import Layout from '../../components/layouts';
 import CardUser from '../../components/elements/CardUser';
 import Loading from '../../components/elements/Loading';
 import BannerInfo from '../../components/elements/BannerInfo';
-import Error from '../Error';
 
 function Component (props) {
   const { root, users, actions } = props;
-  const { isLoading, isError } = root;
+  const { isLoading } = root;
   
   useEffect(() => {
     actions.getUsers();
@@ -19,10 +18,6 @@ function Component (props) {
       <BannerInfo className="bg-gradient-to-r from-pink-500 to-blue-500 text-white" subtitle="Find your friends and make happiness together" title="People who have joined" />
     </div>
   );
-
-  if (isError) {
-    return <Error />
-  }
 
   return (
     <Layout>
