@@ -1,7 +1,10 @@
 const routes = {
   HOME: () => '/',
   PROFILE: () => '/profile',
-  POST_DETAIL: (id) => `/post/${id}`
+  POSTS: () => `/posts`,
+  POST_DETAIL: (id) => `/post/${id}`,
+  USERS: () => `/users`,
+  USERS_DETAIL: (id) => `/users/${id}`,
 };
 
 export default routes;

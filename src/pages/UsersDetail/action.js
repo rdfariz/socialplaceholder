@@ -1,13 +1,13 @@
 import { ACTIONS } from '../../constants';
 import { SERVICES } from '../../configs';
 import fetch from '../../utils/fetch';
+// import { history } from '../../store/configureStore';
 
-export function getPosts (params) {
+export function getUserDetail (id) {
   return (dispatch) => {
     const options = {
       method: 'GET',
-      url: SERVICES.GET_POST_LIST,
-      params
+      url: SERVICES.GET_USER_DETAIL(id)
     };
 
     dispatch(setLoading(true));
@@ -25,9 +25,39 @@ export function getPosts (params) {
   };
 }
 
+
+export function getUserPosts (id) {
+  return (dispatch) => {
+    const options = {
+      method: 'GET',
+      url: SERVICES.GET_USER_POSTS(id)
+    };
+
+    dispatch(setLoading(true));
+
+    return fetch(options)
+      .then((res) => {
+        dispatch(setError(false));
+        dispatch(setDataUserPosts(res));
+        dispatch(setLoading(false));
+      })
+      .catch((err) => {
+        dispatch(setError(true));
+        dispatch(setLoading(false));
+      });
+  };
+}
+
 export function setData (data) {
   return {
-    type: ACTIONS.SET_POST_LIST,
+    type: ACTIONS.SET_USER_DETAIL,
+    data,
+  };
+}
+
+export function setDataUserPosts (data) {
+  return {
+    type: ACTIONS.SET_USER_POSTS,
     data,
   };
 }

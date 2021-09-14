@@ -24,6 +24,16 @@ function Component (props) {
           </h2>
           <p className="mt-2 text-sm text-gray-600">{body}</p>
         </div>
+        {isDetail && (
+          <div className="mt-4">
+            <button class="bg-blue-400 text-white font-bold py-2 px-4 rounded">
+              Batal
+            </button>
+            <button class="bg-green-500 text-white font-bold py-2 px-4 rounded">
+              Simpan
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

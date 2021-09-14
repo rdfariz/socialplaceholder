@@ -6,6 +6,7 @@ import { getPosts } from '../Home/action';
 
 function mapStateToProps(state) {
   return {
+    root: { ...state.root },
     home: { ...state.home },
     ...state.postDetail
   };

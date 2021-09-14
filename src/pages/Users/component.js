@@ -1,30 +1,30 @@
 import React, { useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import Layout from '../../components/layouts';
-import CardPost from '../../components/elements/CardPost';
+import CardUser from '../../components/elements/CardUser';
 import Loading from '../../components/elements/Loading';
 
 function Component (props) {
-  const { root, posts, actions } = props;
+  const { root, users, actions } = props;
   const { isLoading } = root;
   
   useEffect(() => {
-    actions.getPosts();
+    actions.getUsers();
   }, [actions]);
 
   return (
     <Layout>
       <Helmet>
           <meta charSet="utf-8" />
-          <title>Home</title>
+          <title>Users</title>
       </Helmet>
 
       {isLoading ? (
         <Loading />
       ) : (
         <div className="w-full flex flex-wrap">
-          {posts && posts.map((post) => (
-            <CardPost className="w-full md:w-1/2 p-2" title={post.title} userId={post.userId} id={post.id} body={post.body} />
+          {users && users.map((user) => (
+            <CardUser className="w-full md:w-1/2 p-2" title={user.name} id={user.id} body={user.username} />
           ))}
         </div>
       )}

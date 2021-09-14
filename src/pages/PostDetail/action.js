@@ -14,12 +14,12 @@ export function getPostDetail (id) {
 
     return fetch(options)
       .then((res) => {
-        dispatch(setFailed(false));
+        dispatch(setError(false));
         dispatch(setData(res));
         dispatch(setLoading(false));
       })
       .catch((err) => {
-        dispatch(setFailed(true));
+        dispatch(setError(true));
         dispatch(setLoading(false));
       });
   };
@@ -39,12 +39,12 @@ export function getPostComments (id) {
 
     return fetch(options)
       .then((res) => {
-        dispatch(setFailed(false));
+        dispatch(setError(false));
         dispatch(setDataComments(res));
         dispatch(setLoading(false));
       })
       .catch((err) => {
-        dispatch(setFailed(true));
+        dispatch(setError(true));
         dispatch(setLoading(false));
       });
   };
@@ -64,10 +64,10 @@ export function setDataComments (data) {
   };
 }
 
-export function setFailed (isFailed) {
+export function setError (isError) {
   return {
-    type: ACTIONS.SET_FAILED,
-    isFailed,
+    type: ACTIONS.SET_ERROR,
+    isError,
   };
 }
 

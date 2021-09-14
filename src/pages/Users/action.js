@@ -2,11 +2,11 @@ import { ACTIONS } from '../../constants';
 import { SERVICES } from '../../configs';
 import fetch from '../../utils/fetch';
 
-export function getPosts (params) {
+export function getUsers (params) {
   return (dispatch) => {
     const options = {
       method: 'GET',
-      url: SERVICES.GET_POST_LIST,
+      url: SERVICES.GET_USER_LIST,
       params
     };
 
@@ -27,7 +27,7 @@ export function getPosts (params) {
 
 export function setData (data) {
   return {
-    type: ACTIONS.SET_POST_LIST,
+    type: ACTIONS.SET_USER_LIST,
     data,
   };
 }

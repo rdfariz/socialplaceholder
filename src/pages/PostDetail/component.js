@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet";
 import Layout from '../../components/layouts';
 import CardPost from '../../components/elements/CardPost';
+import Loading from '../../components/elements/Loading';
 import { shuffleArray } from '../../utils/text';
 
 function Component (props) {
-  const { match: { params: { id } }, home, post, comments, isLoading, actions } = props;
+  const { match: { params: { id } }, root, home, post, comments, actions } = props;
   const { posts } = home;
+  const { isLoading } = root;
 
   useEffect(() => {
     actions.getPostDetail(id);
@@ -16,13 +18,13 @@ function Component (props) {
   }, [actions, id])
   
   const renderContent = (
-      post && (
-        <CardPost className="mb-6" title={post.title} userId={post.userId} id={post.id} body={post.body} isDetail />
-      )
+    post && (
+      <CardPost className="mb-6" title={post.title} userId={post.userId} id={post.id} body={post.body} isDetail />
+    )
   );
   
   const renderComments = (
-    <div>
+    <div className="px-4">
       <h3 className="text-lg font-medium my-3">Komentar</h3>
       {comments && comments.map((comment) => (
         <div className="mb-3 pb-4 border-b" key={comment.id}>
@@ -36,13 +38,11 @@ function Component (props) {
   const renderSidebar = (
     <div>
       <h3 className="text-md font-medium mt-4 md:mt-0 mb-2">Artikel Lainnya</h3>
-      {
-        posts && shuffleArray(posts).map((p, index) => (
-          p.id !== post.id && index <= 4 && (
-            <CardPost className="py-2" key={p.id} title={p.title} userId={p.userId} id={p.id} body={p.body} />
-          )
-        ))
-      }
+      {posts && shuffleArray(posts).map((p, index) => (
+        p.id !== post.id && index <= 4 && (
+          <CardPost className="py-2" key={p.id} title={p.title} userId={p.userId} id={p.id} body={p.body} />
+        )
+      ))}
     </div>
   )
 
@@ -53,14 +53,14 @@ function Component (props) {
           <title>Post {id}</title>
       </Helmet>
       {isLoading ? (
-        <p className="text-center">Loading...</p>
+        <Loading />
       ) : (
         <div className="flex flex-wrap">
           <div className="w-full lg:w-8/12 md:pr-2">
             {renderContent}
             {renderComments}
           </div>
-          <div className="w-full lg:w-4/12 md:pl-5 border-t md:border-0">
+          <div className="w-full lg:w-4/12 md:pl-5">
             {renderSidebar}
           </div>
         </div>
@@ -70,11 +70,13 @@ function Component (props) {
 }
 
 Component.defaultProps = {
-  posts: [] 
+  post: {},
+  comments: []
 };
 
 Component.propTypes = {
-  posts: PropTypes.array
+  post: PropTypes.object,
+  comments: PropTypes.array
 };
 
 export default Component;

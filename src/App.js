@@ -15,6 +15,8 @@ function App (props) {
           <Route component={pages.Home} exact path={ROUTES.HOME()} />
           <Route component={pages.Profil} path={ROUTES.PROFILE()} />
           <Route component={pages.PostDetail} path={ROUTES.POST_DETAIL(':id')} />
+          <Route component={pages.UsersDetail} path={ROUTES.USERS_DETAIL(':id')} />
+          <Route component={pages.Users} path={ROUTES.USERS()} />
         </Switch>
       </BrowserRouter>
     </Provider>

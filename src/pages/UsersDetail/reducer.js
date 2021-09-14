@@ -1,18 +1,24 @@
 import { ACTIONS } from '../../constants';
 
 const initialState = {
-  posts: []
+  user: {},
+  userPosts: []
 };
 
 export default function reducer (state = initialState, action) {
   const { type, data } = action;
-  const { SET_POST_LIST } = ACTIONS;
+  const { SET_USER_DETAIL, SET_USER_POSTS } = ACTIONS;
 
   switch (type) {
-    case SET_POST_LIST:
+    case SET_USER_DETAIL:
       return {
         ...state,
-        posts: data
+        user: data
+      };
+    case SET_USER_POSTS:
+      return {
+        ...state,
+        userPosts: data
       };
     default:
       return state;
