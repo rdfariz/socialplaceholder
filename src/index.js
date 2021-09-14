@@ -6,8 +6,6 @@ import App from './App';
 const store = configureStore();
 
 render(
-  <div>
-    <App store={store} />
-  </div>,
+  <App store={store} />,
   document.getElementById('root')
 );

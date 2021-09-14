@@ -13,10 +13,11 @@ function App (props) {
       <BrowserRouter>
         <Switch>  
           <Route component={pages.Home} exact path={ROUTES.HOME()} />
-          <Route component={pages.Profil} path={ROUTES.PROFILE()} />
           <Route component={pages.PostDetail} path={ROUTES.POST_DETAIL(':id')} />
-          <Route component={pages.UsersDetail} path={ROUTES.USERS_DETAIL(':id')} />
+          <Route component={pages.UserDetail} path={ROUTES.USER_DETAIL(':id')} />
+          <Route component={pages.UserAlbums} path={ROUTES.USER_ALBUMS(':id')} />
           <Route component={pages.Users} path={ROUTES.USERS()} />
+          <Route component={pages.Albums} path={ROUTES.ALBUMS()} />
         </Switch>
       </BrowserRouter>
     </Provider>
@@ -26,6 +27,5 @@ function App (props) {
 App.propTypes = {
   store: PropTypes.object.isRequired
 };
-
 
 export default App;

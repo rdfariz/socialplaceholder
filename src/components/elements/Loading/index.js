@@ -1,5 +1,9 @@
 function Component () {
-  return (<p className="text-center">Loading...</p>)
+  return (
+    <div className="w-full flex justify-center">
+      <p className="text-center p-2">Loading...</p>
+    </div>
+  )
 }
 
 export default Component;

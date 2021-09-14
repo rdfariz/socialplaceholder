@@ -1,15 +1,17 @@
 import Home from './Home';
-import Profil from './Profile';
 import PostDetail from './PostDetail';
 import Users from './Users';
-import UsersDetail from './UsersDetail';
+import UserDetail from './UserDetail';
+import UserAlbums from './UserAlbums';
+import Albums from './Albums';
 
 const pages = {
   Home,
-  Profil,
   PostDetail,
   Users,
-  UsersDetail,
+  UserDetail,
+  UserAlbums,
+  Albums
 };
 
 export default pages;

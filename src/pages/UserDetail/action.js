@@ -2,11 +2,11 @@ import { ACTIONS } from '../../constants';
 import { SERVICES } from '../../configs';
 import fetch from '../../utils/fetch';
 
-export function getPostDetail (id) {
+export function getUserDetail (id) {
   return (dispatch) => {
     const options = {
       method: 'GET',
-      url: SERVICES.GET_POST_DETAIL(id)
+      url: SERVICES.GET_USER_DETAIL(id)
     };
 
     dispatch(setLoading(true));
@@ -24,14 +24,12 @@ export function getPostDetail (id) {
   };
 }
 
-export function getPostComments (id) {
+
+export function getUserPosts (id) {
   return (dispatch) => {
     const options = {
       method: 'GET',
-      url: SERVICES.GET_POST_COMMENTS,
-      params: {
-        postId: id
-      }
+      url: SERVICES.GET_USER_POSTS(id)
     };
 
     dispatch(setLoading(true));
@@ -39,7 +37,7 @@ export function getPostComments (id) {
     return fetch(options)
       .then((res) => {
         dispatch(setError(false));
-        dispatch(setDataComments(res));
+        dispatch(setDataUserPosts(res));
         dispatch(setLoading(false));
       })
       .catch((err) => {
@@ -49,14 +47,11 @@ export function getPostComments (id) {
   };
 }
 
-export function updatePost (params, id) {
+export function getUserAlbums (id) {
   return (dispatch) => {
     const options = {
-      method: 'PUT',
-      url: SERVICES.GET_POST_DETAIL(id),
-      data: {
-        ...params
-      }
+      method: 'GET',
+      url: SERVICES.GET_USER_ALBUMS(id)
     };
 
     dispatch(setLoading(true));
@@ -64,45 +59,33 @@ export function updatePost (params, id) {
     return fetch(options)
       .then((res) => {
         dispatch(setError(false));
-        dispatch(setData(res));
+        dispatch(setDataUserAlbums(res));
         dispatch(setLoading(false));
       })
       .catch((err) => {
         dispatch(setError(true));
         dispatch(setLoading(false));
-      });
-  };
-}
-
-export function deletePost (id) {
-  return (dispatch) => {
-    const options = {
-      method: 'DELETE',
-      url: SERVICES.GET_POST_DETAIL(id)
-    };
-
-    dispatch(setLoading(true));
-
-    return fetch(options)
-      .then(() => {
-        return true;
-      })
-      .catch((err) => {
-        return false;
       });
   };
 }
 
 export function setData (data) {
   return {
-    type: ACTIONS.SET_POST_DETAIL,
+    type: ACTIONS.SET_USER_DETAIL,
     data,
   };
 }
 
-export function setDataComments (data) {
+export function setDataUserPosts (data) {
   return {
-    type: ACTIONS.SET_POST_COMMENTS,
+    type: ACTIONS.SET_USER_POSTS,
+    data,
+  };
+}
+
+export function setDataUserAlbums (data) {
+  return {
+    type: ACTIONS.SET_USER_ALBUMS,
     data,
   };
 }

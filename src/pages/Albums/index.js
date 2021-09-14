@@ -6,7 +6,7 @@ import * as actions from './action';
 function mapStateToProps(state) {
   return {
     root: { ...state.root },
-    ...state.profil
+    ...state.albums
   };
 }
 
