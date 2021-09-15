@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/elements/Comment render 1`] = `
+<div
+  className="mb-3 pb-4 border-b"
+>
+  <div>
+    <h2>
+      by: 
+      <span
+        className="font-semibold"
+      >
+        tester
+      </span>
+    </h2>
+    <p
+      className="mt-1 text-sm"
+    >
+      body
+    </p>
+    <div
+      className="w-full flex flex-wrap mt-4"
+    >
+      <button
+        className="btn-edit text-sm border text-blue-600 rounded py-1 px-2 mr-2"
+        onClick={[Function]}
+      >
+        Edit
+      </button>
+      <button
+        className="btn-delete text-sm border text-red-600 rounded py-1 px-2 mr-2"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+`;

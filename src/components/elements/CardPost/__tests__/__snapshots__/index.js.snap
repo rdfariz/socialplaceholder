@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/elements/CardPost render 1`] = `
+<div
+  className=" flex"
+>
+  <div
+    className="card_post w-full p-3 md:p-5 bg-white rounded-lg border false"
+    onClick={[Function]}
+  >
+    <div>
+      <div
+        className="text-blue-600 font-medium"
+      >
+        <Link
+          to="/users/10"
+        >
+          Author ID: 
+          10
+        </Link>
+        <hr
+          className="my-3"
+        />
+      </div>
+      <h2
+        className="text-gray-800 text-lg font-semibold false"
+      >
+        title
+      </h2>
+      <p
+        className="mt-2 text-sm text-gray-600"
+      >
+        tesbody
+      </p>
+      <div
+        className="mt-4"
+      >
+        <button
+          className="btn-edit bg-blue-400 text-white font-bold py-2 px-4 rounded mr-2"
+          onClick={[Function]}
+        >
+          Edit
+        </button>
+        <button
+          className="btn-delete bg-pink-500 text-white font-bold py-2 px-4 rounded"
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

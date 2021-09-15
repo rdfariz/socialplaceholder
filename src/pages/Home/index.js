@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import Component from './component';
 import * as actions from './action';
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     root: { ...state.root },
     ...state.home
   };
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
   };

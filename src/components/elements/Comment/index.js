@@ -16,8 +16,8 @@ function Component (props) {
       <h2>by: <span className="font-semibold">{name}</span></h2>
       <p className="mt-1 text-sm">{body}</p>
       <div className="w-full flex flex-wrap mt-4">
-        <button onClick={() => setIsEditLayout(true)} className="text-sm border text-blue-600 rounded py-1 px-2 mr-2">Edit</button>
-        <button onClick={() => handleDeleteComment(id)} className="text-sm border text-red-600 rounded py-1 px-2 mr-2">Delete</button>
+        <button onClick={() => setIsEditLayout(true)} className="btn-edit text-sm border text-blue-600 rounded py-1 px-2 mr-2">Edit</button>
+        <button onClick={() => handleDeleteComment(id)} className="btn-delete text-sm border text-red-600 rounded py-1 px-2 mr-2">Delete</button>
       </div>
     </div>
   );

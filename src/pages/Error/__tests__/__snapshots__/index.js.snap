@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/pages/Error render 1`] = `
+<Component>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <meta
+      charSet="utf-8"
+    />
+    <title>
+      Social Dashboard - Something went wrong. Please try again
+    </title>
+  </HelmetWrapper>
+  <div>
+    <div
+      className="w-full p-2 mb-1"
+    >
+      <Component
+        className="bg-gradient-to-r from-pink-500 to-blue-500 text-white"
+        label=""
+        subtitle="Something went wrong. Please try again"
+        title="Oops!"
+      />
+    </div>
+  </div>
+</Component>
+`;

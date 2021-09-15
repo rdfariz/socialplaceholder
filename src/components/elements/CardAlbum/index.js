@@ -12,7 +12,7 @@ function Component (props) {
   
   return (
     <div className={`${className} flex`}>
-      <div className="w-full p-3 md:p-5 bg-white rounded-lg border cursor-pointer hover:shadow-md" onClick={handleClick}>
+      <div className="card_album w-full p-3 md:p-5 bg-white rounded-lg border cursor-pointer hover:shadow-md" onClick={handleClick}>
         <div className="text-sm font-medium">
           <p>Author ID: {userId}</p>
           <hr className="my-2" />

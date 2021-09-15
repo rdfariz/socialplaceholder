@@ -2,27 +2,6 @@
   "name": "social-dashboard",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.3.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.4",
-    "history": "^5.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-hot-loader": "^4.13.0",
-    "react-redux": "^7.2.5",
-    "react-router": "^5.2.1",
-    "react-router-dom": "^5.3.0",
-    "react-router-redux": "^4.0.8",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.1",
-    "redux-form": "^8.3.7",
-    "redux-thunk": "^2.3.0",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
@@ -47,12 +26,35 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@craco/craco": "^6.3.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.4",
+    "history": "^5.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^7.2.5",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.1",
+    "redux-form": "^8.3.7",
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.9",
+    "web-vitals": "^1.0.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "postcss": "^7.0.36",
     "react-test-renderer": "^17.0.2",
+    "redux-mock-store": "^1.5.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
   }
 }

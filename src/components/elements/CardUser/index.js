@@ -13,7 +13,7 @@ function Component (props) {
 
   return (
     <div className={`${className} flex`}>
-      <div className={`w-full p-5 rounded-lg border ${!isDetail ? 'cursor-pointer hover:shadow-md' : 'bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 ...'}`} onClick={handleClick}>
+      <div className={`card_user w-full p-5 rounded-lg border ${!isDetail ? 'cursor-pointer hover:shadow-md' : 'bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 ...'}`} onClick={handleClick}>
         <div className={`${isDetail ? 'text-white' : 'text-gray-800'}`}>
           <h2 className={`text-lg ${!isDetail ? 'font-medium truncate ...' : 'font-bold'}`}>{title}</h2>
           <p className="text-sm">{body}</p>

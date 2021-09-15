@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/elements/CardAlbum render 1`] = `
+<div
+  className=" flex"
+>
+  <div
+    className="card_album w-full p-3 md:p-5 bg-white rounded-lg border cursor-pointer hover:shadow-md"
+    onClick={[Function]}
+  >
+    <div
+      className="text-sm font-medium"
+    >
+      <p>
+        Author ID: 
+        10
+      </p>
+      <hr
+        className="my-2"
+      />
+    </div>
+    <h2
+      className="text-gray-800 text-lg font-semibold truncate ..."
+    >
+      title
+    </h2>
+  </div>
+</div>
+`;

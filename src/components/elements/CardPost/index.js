@@ -32,10 +32,10 @@ function Component (props) {
       <p className="mt-2 text-sm text-gray-600">{body}</p>
       {isDetail && (
         <div className="mt-4">
-          <button onClick={() => setIsEditLayout(true)} className="bg-blue-400 text-white font-bold py-2 px-4 rounded mr-2">
+          <button onClick={() => setIsEditLayout(true)} className="btn-edit bg-blue-400 text-white font-bold py-2 px-4 rounded mr-2">
             Edit
           </button>
-          <button onClick={handleDeletePost} className="bg-pink-500 text-white font-bold py-2 px-4 rounded">
+          <button onClick={handleDeletePost} className="btn-delete bg-pink-500 text-white font-bold py-2 px-4 rounded">
             Delete
           </button>
         </div>
@@ -51,7 +51,7 @@ function Component (props) {
 
   return (
     <div className={`${className} flex`}>
-      <div className={`w-full p-3 md:p-5 bg-white rounded-lg border ${!isDetail && 'cursor-pointer hover:shadow-md'}`} onClick={handleClick}>
+      <div className={`card_post w-full p-3 md:p-5 bg-white rounded-lg border ${!isDetail && 'cursor-pointer hover:shadow-md'}`} onClick={handleClick}>
         {isEditLayout ? renderFormEdit : renderCardPost}
       </div>
     </div>

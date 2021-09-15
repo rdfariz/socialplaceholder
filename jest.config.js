@@ -8,6 +8,7 @@ module.exports = {
     'raf/polyfill',
     './tools/enzymeTestAdapterSetup.js'
   ],
+  setupFilesAfterEnv: ["./src/setupTests.js"] ,
   collectCoverageFrom: ['src/**/*.js', '!src/assets/**/*.js'],
   testURL: 'http://localhost/',
   testEnvironment: 'jsdom',

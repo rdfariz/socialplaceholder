@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/elements/CardPhoto render 1`] = `
+<div
+  className=" flex"
+>
+  <div
+    className="w-full bg-white overflow-hidden rounded-lg border cursor-pointer hover:shadow-md"
+    onClick={[Function]}
+  >
+    <img
+      alt="title"
+      className="w-full"
+      src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    />
+    <div
+      className="p-3 md:p-5 "
+    >
+      <h2
+        className="text-gray-800 text-lg font-semibold"
+      >
+        title
+      </h2>
+    </div>
+  </div>
+</div>
+`;

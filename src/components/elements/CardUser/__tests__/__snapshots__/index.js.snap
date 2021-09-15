@@ -5,7 +5,7 @@ exports[`src/components/elements/CardUser render 1`] = `
   className=" flex"
 >
   <div
-    className="w-full p-5 rounded-lg border bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 ..."
+    className="card_user w-full p-5 rounded-lg border bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 ..."
     onClick={[Function]}
   >
     <div
